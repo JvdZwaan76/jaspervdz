@@ -21,7 +21,7 @@
     </style>
   </head>
 <body class="w3-black">
-
+  
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
   <!-- Avatar image in top left corner -->
@@ -215,7 +215,27 @@
     </div><br>
     <p>Let's get in touch. Send me a message:</p>
 
-    <form action="/action_page.php" target="_blank">
+<?php
+// define variables and set to empty values
+$Name = $Email = $Subject = $Message = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = test_input($_POST["Name"]);
+  $email = test_input($_POST["Email"]);
+  $email = test_input($_POST["Subject"]);
+  $comment = test_input($_POST["Message"]);
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
+
+<h2>PHP Form Validation Example</h2>
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
@@ -226,6 +246,16 @@
         </button>
       </p>
     </form>
+<?php
+echo "<h2>Your Input:</h2>";
+echo $Name;
+echo "<br>";
+echo $Email;
+echo "<br>";
+echo $Subject;
+echo "<br>";
+echo $Message;
+?>
   <!-- End Contact Section -->
   </div>
   
