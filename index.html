@@ -220,7 +220,7 @@
 $Name = $Email = $Subject = $Message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["name"])) {
+  if (empty($_POST["Name"])) {
     $NameErr = "Name is required";
   } else {
     $Name = test_input($_POST["Name"]);
@@ -235,7 +235,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     $Email = test_input($_POST["Email"]);
     // check if e-mail address is well-formed
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
       $EmailErr = "Invalid email format";
     }
   }
