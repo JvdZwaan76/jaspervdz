@@ -220,10 +220,37 @@
 $Name = $Email = $Subject = $Message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $Name = test_input($_POST["Name"]);
-  $Email = test_input($_POST["Email"]);
-  $Subject = test_input($_POST["Subject"]);
-  $Message = test_input($_POST["Message"]);
+  if (empty($_POST["name"])) {
+    $NameErr = "Name is required";
+  } else {
+    $Name = test_input($_POST["Name"]);
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z-' ]*$/",$Name)) {
+      $NameErr = "Only letters and white space allowed";
+    }
+  }
+  
+  if (empty($_POST["Email"])) {
+    $EmailErr = "Email is required";
+  } else {
+    $Email = test_input($_POST["Email"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $EmailErr = "Invalid email format";
+    }
+  }
+
+  if (empty($_POST["Subject"])) {
+    $Subject = "Subject is required";
+  } else {
+    $comment = test_input($_POST["Subject"]);
+  }
+
+  if (empty($_POST["Message"])) {
+    $MessageErr = "Message is required";
+  } else {
+    $Message = test_input($_POST["Message"]);
+  }
 }
 
 function test_input($data) {
@@ -245,16 +272,6 @@ function test_input($data) {
         </button>
       </p>
     </form>
-<?php
-echo "<h2>Your Input:</h2>";
-echo $Name;
-echo "<br>";
-echo $Email;
-echo "<br>";
-echo $Subject;
-echo "<br>";
-echo $Message;
-?>
   <!-- End Contact Section -->
   </div>
   
