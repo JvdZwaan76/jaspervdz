@@ -220,10 +220,10 @@
 $Name = $Email = $Subject = $Message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $name = test_input($_POST["Name"]);
-  $email = test_input($_POST["Email"]);
-  $email = test_input($_POST["Subject"]);
-  $comment = test_input($_POST["Message"]);
+  $Name = test_input($_POST["Name"]);
+  $Email = test_input($_POST["Email"]);
+  $Subject = test_input($_POST["Subject"]);
+  $Message = test_input($_POST["Message"]);
 }
 
 function test_input($data) {
