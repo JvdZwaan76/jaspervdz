@@ -215,58 +215,14 @@
       <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: jaspervdz@me.com</p>
     </div><br>
     <p>Let's get in touch. Send me a message:</p>
-
-<?php
-// define variables and set to empty values
-$Name = $Email = $Subject = $Message = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["Name"])) {
-    $NameErr = "Name is required";
-  } else {
-    $Name = test_input($_POST["Name"]);
-    // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z-' ]*$/",$Name)) {
-      $NameErr = "Only letters and white space allowed";
-    }
-  }
-  
-  if (empty($_POST["Email"])) {
-    $EmailErr = "Email is required";
-  } else {
-    $Email = test_input($_POST["Email"]);
-    // check if e-mail address is well-formed
-    if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
-      $EmailErr = "Invalid email format";
-    }
-  }
-
-  if (empty($_POST["Subject"])) {
-    $Subject = "Subject is required";
-  } else {
-    $comment = test_input($_POST["Subject"]);
-  }
-
-  if (empty($_POST["Message"])) {
-    $MessageErr = "Message is required";
-  } else {
-    $Message = test_input($_POST["Message"]);
-  }
-}
-
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-?>
-
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF>  
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name (Required)" Name="Name"></p> <!--value="<?php echo $Name;?>"> <?php echo $NameErr;?-->
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email (Required)" Name="Email"></p> <!--value="<?php echo $Email;? ?php echo $EmailErr;?-->
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject (Required)" Name="Subject"></p> <!--value="<?php echo $Subject;? ?php echo $SubjectErr;?-->
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message (Required)" Name="Message"></p> <!--value="<?php echo $Message;? ?php echo $MessageErr;?-->
+<form
+  action="https://formspree.io/f/mvgpazne"
+  method="POST"
+>  
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name (Required)" Name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email (Required)" Name="Email"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject (Required)" Name="Subject"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message (Required)" Name="Message"></p>
       <p>
         <button class="w3-button w3-light-grey w3-padding-large" type="submit">
           <i class="fa fa-paper-plane"></i> SEND MESSAGE
