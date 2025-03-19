@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JJ Farewell</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0; /* Optional: background color */
+        }
+
+        .invite-container {
+            width: 90%; /* Adjust as needed for padding on mobile */
+            max-width: 600px; /* Maximum width on larger screens */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+
+        .invite-image {
+            width: 100%;
+            display: block; /* Remove extra space below image */
+            height: auto;
+        }
+
+        /* Optional: Add some padding or margin for better spacing */
+        @media (min-width: 601px) { /* Adjust for larger screens */
+            .invite-container {
+                width: auto; /* Allow image to be its natural size on larger screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="invite-container">
+        <img src="/images/jj-farewell-invite.jpg" alt="JJ Farewell Invitation" class="invite-image">
+    </div>
+</body>
+</html>
