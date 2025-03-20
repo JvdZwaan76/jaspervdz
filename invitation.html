@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D1RBXWYN2N"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-D1RBXWYN2N');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="You're Invited!" />
-    <meta property="og:description" content="Join us for a special event." />
-    <meta property="og:image" content="https://www.jaspervanderzwaan.com/images/jj-farewell-invite.jpg" />
-    <meta property="og:url" content="https://www.jaspervanderzwaan.com/invitation" />
-    <meta property="og:site_name" content="Jasper van der Zwaan" />
     <title>JJ Farewell BBQ | You're Invited!</title>
+    <meta name="description" content="You're invited to JJ's farewell BBQ! Join us for a special event. RSVP and download the invitation.">
+    <meta name="keywords" content="JJ, farewell, BBQ, invitation, event, party, RSVP, download">
+    <meta property="og:title" content="JJ Farewell BBQ | You're Invited!">
+    <meta property="og:description" content="You're invited to JJ's farewell BBQ! Join us for a special event. RSVP and download the invitation.">
+    <meta property="og:image" content="https://www.jaspervanderzwaan.com/images/jj-farewell-invite.jpg">
+    <meta property="og:url" content="https://www.jaspervanderzwaan.com/invitation">
+    <meta property="og:type" content="website">
     <link rel="icon" href="/images/favicon.ico">
     <style>
         body {
@@ -43,12 +38,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-wrap: wrap; /* Added for mobile */
         }
 
         .view-counter strong {
             margin-left: 10px;
-            border-left: 1px solid rgba(0, 0, 0, 0.2); /* Hairline divider */
+            border-left: 1px solid rgba(0, 0, 0, 0.2);
             padding-left: 10px;
+            margin-top: 5px; /* Added for mobile */
+            width: 100%; /* Added for mobile */
+            text-align: center; /* Added for mobile */
         }
 
         .invite-container {
@@ -105,6 +104,12 @@
             .invite-container {
                 width: 90%;
             }
+
+            .view-counter strong{
+                width: auto;
+                text-align: left;
+                margin-top: 0;
+            }
         }
 
         @media (min-width: 768px) {
@@ -121,7 +126,6 @@
             }
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
     <div class="view-counter" id="viewCounter">&#128065; Unique Views: 0 <strong style="text-decoration: underline;">Invited Guests Only!</strong></div>
@@ -136,15 +140,6 @@
     <script>
         let uniqueView = !localStorage.getItem('uniqueView');
         let uniqueViewCount = parseInt(localStorage.getItem('uniqueViewCount')) || 0;
-
-        confetti({
-            particleCount: 200,
-            spread: 100,
-            origin: { y: 0.5 },
-            gravity: 1,
-            decay: 0.9,
-            colors: ['#ffc0cb', '#ff69b4', '#ff1493', '#db7093', '#c71585']
-        });
 
         if (uniqueView) {
             uniqueViewCount++;
