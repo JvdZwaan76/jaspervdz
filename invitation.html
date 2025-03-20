@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D1RBXWYN2N"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-D1RBXWYN2N');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D1RBXWYN2N"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-D1RBXWYN2N');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:title" content="You're Invited!" />
-  <meta property="og:description" content="Join us for a special event." />
-  <meta property="og:image" content="https://www.jaspervanderzwaan.com/images/jj-farewell-invite.jpg" />
-  <meta property="og:url" content="https://www.jaspervanderzwaan.com/invitation" />
-  <meta property="og:site_name" content="Jasper van der Zwaan" />
+    <meta property="og:title" content="You're Invited!" />
+    <meta property="og:description" content="Join us for a special event." />
+    <meta property="og:image" content="https://www.jaspervanderzwaan.com/images/jj-farewell-invite.jpg" />
+    <meta property="og:url" content="https://www.jaspervanderzwaan.com/invitation" />
+    <meta property="og:site_name" content="Jasper van der Zwaan" />
     <title>JJ Farewell BBQ | You're Invited!</title>
-  <link rel="icon" href="/images/favicon.ico">
+    <link rel="icon" href="/images/favicon.ico">
     <style>
         @font-face {
             font-family: 'Owners XWide';
@@ -36,6 +35,7 @@
             align-items: center;
             min-height: 100vh;
             background-color: #f0f0f0;
+            font-family: sans-serif; /* Added a default font family for better consistency */
         }
 
         .view-counter {
@@ -46,8 +46,7 @@
             font-size: 16px;
             color: black;
             margin-bottom: 15px;
-            font-family: sans-serif;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .invite-container {
@@ -74,6 +73,7 @@
         .button-container {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap; /* Added flex-wrap for better mobile button layout */
             margin-top: 20px;
             margin-bottom: 20px;
             background-color: transparent;
@@ -87,9 +87,9 @@
             text-decoration: none;
             border: 1px solid black;
             border-radius: 5px;
-            font-family: sans-serif;
-            margin: 0 5px;
+            margin: 5px; /* Adjusted margin for mobile spacing */
             font-size: 16px;
+            box-sizing: border-box; /* Added box-sizing for consistent button dimensions */
         }
 
         .rsvp-button {
@@ -100,6 +100,9 @@
             .invite-container {
                 width: auto;
             }
+            .download-button, .rsvp-button {
+                margin: 0 5px; /* Reset margin for desktop */
+            }
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
@@ -109,7 +112,7 @@
     <div class="invite-container">
         <img src="/images/jj-farewell-invite.jpg" alt="JJ Farewell Invitation" class="invite-image">
         <div class="button-container">
-            <a href="/images/jj-farewell-invite.jpg" class="download-button" download="jj-farewell-invite.jpg">Download this Invitation</a>
+            <a href="/images/jj-farewell-invite.jpg" class="download-button" download="jj-farewell-invite.jpg">Download</a>
             <a href="sms:+18053387681?body=I%20will%20attend:%20" class="rsvp-button">RSVP</a>
         </div>
     </div>
