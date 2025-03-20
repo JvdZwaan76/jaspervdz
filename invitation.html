@@ -83,14 +83,15 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
-    <div class="view-counter" id="viewCounter">&#128065; Views: 0</div>
+    <div class="view-counter" id="viewCounter">&#128065; Unique Views: 0</div>
     <div class="invite-container">
         <img src="/images/jj-farewell-invite.jpg" alt="JJ Farewell Invitation" class="invite-image">
         <a href="/images/jj-farewell-invite.jpg" class="download-button" download="jj-farewell-invite.jpg">Download this Invitation</a>
     </div>
 
     <script>
-        let viewCount = localStorage.getItem('viewCount') || 0;
+        let uniqueView = !localStorage.getItem('uniqueView');
+        let uniqueViewCount = parseInt(localStorage.getItem('uniqueViewCount')) || 0;
         let firstVisit = !localStorage.getItem('visited');
 
         if (firstVisit) {
@@ -102,9 +103,13 @@
             localStorage.setItem('visited', 'true');
         }
 
-        viewCount++;
-        localStorage.setItem('viewCount', viewCount);
-        document.getElementById('viewCounter').innerHTML = '&#128065; Views: ' + viewCount;
+        if (uniqueView) {
+            uniqueViewCount++;
+            localStorage.setItem('uniqueViewCount', uniqueViewCount);
+            localStorage.setItem('uniqueView', 'false');
+        }
+
+        document.getElementById('viewCounter').innerHTML = '&#128065; Unique Views: ' + uniqueViewCount;
     </script>
 </body>
 </html>
