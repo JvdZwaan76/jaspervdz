@@ -3,7 +3,7 @@
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-D1RBXWYN2N"></script>
     <script>
-        window.dataLayer = window.dataLayer ||;
+        window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-D1RBXWYN2N');
@@ -115,7 +115,7 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
-    <div class="view-counter" id="viewCounter">&#128065; Unique Views: 0 | <b style="color: darkgrey; font-size: 1.2rem;">Invited Guests Only</b></div>
+    <div class="view-counter" id="viewCounter">&#128065; Unique Views: 0 | <strong style="text-decoration: underline;">Invited Guests Only</strong></div>
     <div class="invite-container">
         <img src="/images/jj-farewell-invite.jpg" alt="JJ Farewell Invitation" class="invite-image">
         <div class="button-container">
@@ -143,7 +143,7 @@
             localStorage.setItem('uniqueView', 'false');
         }
 
-        document.getElementById('viewCounter').innerHTML = '&#128065; Unique Views: ' + uniqueViewCount + ' | <b style="color: darkgrey; font-size: 1.2rem;">Invited Guests Only</b>';
+        document.getElementById('viewCounter').innerHTML = '&#128065; Unique Views: ' + uniqueViewCount + ' | <strong style="text-decoration: underline;">Invited Guests Only</strong>';
     </script>
 </body>
 </html>
