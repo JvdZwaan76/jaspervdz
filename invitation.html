@@ -39,10 +39,10 @@
         }
 
         .view-counter {
-            padding: 10px 0; /* Vertical padding, no horizontal */
+            padding: 10px 0;
             text-align: center;
-            width: 100%; /* Stretch across the page */
-            background-color: #ffe0b3; /* Light orange background */
+            width: 100%;
+            background-color: #ffe0b3;
             font-size: 14px;
             color: #555;
             margin-bottom: 15px;
@@ -81,7 +81,7 @@
     </style>
 </head>
 <body>
-    <div class="view-counter" id="viewCounter">Views: 0</div>
+    <div class="view-counter" id="viewCounter">&#128065; Views: 0</div>
     <div class="invite-container">
         <img src="/images/jj-farewell-invite.jpg" alt="JJ Farewell Invitation" class="invite-image">
         <a href="/images/jj-farewell-invite.jpg" class="download-button" download="jj-farewell-invite.jpg">Download this Invitation</a>
@@ -91,7 +91,7 @@
         let viewCount = localStorage.getItem('viewCount') || 0;
         viewCount++;
         localStorage.setItem('viewCount', viewCount);
-        document.getElementById('viewCounter').textContent = 'Views: ' + viewCount;
+        document.getElementById('viewCounter').innerHTML = '&#128065; Views: ' + viewCount;
     </script>
 </body>
 </html>
