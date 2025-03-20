@@ -34,12 +34,19 @@
         .view-counter {
             width: 100%;
             text-align: center;
-            background-color: #ff9933;
+            background: linear-gradient(to right, white, rgba(255, 153, 51, 0.75)); /* Gradient and opacity */
             padding: 12px 0;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
             margin-bottom: 20px;
             font-weight: 500;
             font-size: 1rem;
+            display: flex; /* Use flexbox to align content */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+        }
+
+        .view-counter strong {
+            margin-left: 10px; /* Add some space between the count and the text */
         }
 
         .invite-container {
@@ -115,7 +122,7 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
-    <div class="view-counter" id="viewCounter">&#128065; Unique Views: 0 | <strong style="text-decoration: underline;">Invited Guests Only</strong></div>
+    <div class="view-counter" id="viewCounter">&#128065; Unique Views: 0 <strong style="text-decoration: underline;">Invited Guests Only</strong></div>
     <div class="invite-container">
         <img src="/images/jj-farewell-invite.jpg" alt="JJ Farewell Invitation" class="invite-image">
         <div class="button-container">
@@ -143,7 +150,7 @@
             localStorage.setItem('uniqueView', 'false');
         }
 
-        document.getElementById('viewCounter').innerHTML = '&#128065; Unique Views: ' + uniqueViewCount + ' | <strong style="text-decoration: underline;">Invited Guests Only</strong>';
+        document.getElementById('viewCounter').innerHTML = '&#128065; Unique Views: ' + uniqueViewCount + ' <strong style="text-decoration: underline;">Invited Guests Only</strong>';
     </script>
 </body>
 </html>
