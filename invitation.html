@@ -92,16 +92,15 @@
     <script>
         let uniqueView = !localStorage.getItem('uniqueView');
         let uniqueViewCount = parseInt(localStorage.getItem('uniqueViewCount')) || 0;
-        let firstVisit = !localStorage.getItem('visited');
 
-        if (firstVisit) {
-            confetti({
-                particleCount: 100,
-                spread: 70,
-                origin: { y: 0.6 }
-            });
-            localStorage.setItem('visited', 'true');
-        }
+        confetti({
+            particleCount: 200, // Increased particle count
+            spread: 100, // Increased spread
+            origin: { y: 0.5 }, // Adjust origin if needed
+            gravity: 1, // Add gravity for a more realistic effect
+            decay: 0.9, // Adjust decay rate
+            colors: ['#ffc0cb', '#ff69b4', '#ff1493', '#db7093', '#c71585'] // Example color palette
+        });
 
         if (uniqueView) {
             uniqueViewCount++;
