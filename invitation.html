@@ -42,11 +42,25 @@
             padding: 10px 0;
             text-align: center;
             width: 100%;
-            background-color: #ffe0b3;
+            background: linear-gradient(90deg, #b30000 0%, #b30000 20%, #ffffff 20%, #ffffff 40%, #002868 40%, #002868 60%, #ffffff 60%, #ffffff 80%, #b30000 80%, #b30000 100%);
+            background-size: 100% 100%; /* Ensure the gradient covers the entire element */
+            position: relative; /* Needed for absolute positioning of stars */
             font-size: 14px;
-            color: #555;
+            color: #fff;
             margin-bottom: 15px;
             font-family: 'Owners XWide', sans-serif;
+        }
+
+        .view-counter::before { /* Stars */
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 30px;
+            height: 20px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpolygon points='5 0 6.12 3.45 9.76 3.45 6.84 5.59 7.97 9.05 5 7.08 2.03 9.05 3.16 5.59 0.24 3.45 3.88 3.45' fill='%23fff'/%3E%3Cpolygon points='5 0 6.12 3.45 9.76 3.45 6.84 5.59 7.97 9.05 5 7.08 2.03 9.05 3.16 5.59 0.24 3.45 3.88 3.45' fill='%23fff'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: repeat;
         }
 
         .invite-container {
@@ -94,12 +108,12 @@
         let uniqueViewCount = parseInt(localStorage.getItem('uniqueViewCount')) || 0;
 
         confetti({
-            particleCount: 200, // Increased particle count
-            spread: 100, // Increased spread
-            origin: { y: 0.5 }, // Adjust origin if needed
-            gravity: 1, // Add gravity for a more realistic effect
-            decay: 0.9, // Adjust decay rate
-            colors: ['#ffc0cb', '#ff69b4', '#ff1493', '#db7093', '#c71585'] // Example color palette
+            particleCount: 200,
+            spread: 100,
+            origin: { y: 0.5 },
+            gravity: 1,
+            decay: 0.9,
+            colors: ['#ffc0cb', '#ff69b4', '#ff1493', '#db7093', '#c71585']
         });
 
         if (uniqueView) {
