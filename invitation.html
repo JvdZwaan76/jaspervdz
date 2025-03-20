@@ -58,6 +58,7 @@
             border-radius: 5px;
             overflow: hidden;
             margin: 10px 0;
+            background: linear-gradient(to bottom, #f0f0f0, #e0e0e0); /* Light to slightly darker grey gradient */
         }
 
         .invite-image {
@@ -65,7 +66,7 @@
             display: block;
             height: auto;
             max-height: 80vh;
-            object-fit: contain; /* Prevent skewing */
+            object-fit: contain;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
@@ -74,9 +75,8 @@
             justify-content: center;
             margin-top: 20px;
             margin-bottom: 20px;
-            background-color: #f0f0f0;
+            background-color: transparent; /* Remove redundant background */
             padding: 10px;
-            border-radius: 5px;
         }
 
         .download-button, .rsvp-button {
