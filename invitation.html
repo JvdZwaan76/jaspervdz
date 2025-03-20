@@ -71,7 +71,7 @@
             text-decoration: none;
             border-radius: 5px;
             font-family: sans-serif;
-            margin-bottom: 20px; /* added margin below */
+            margin-bottom: 20px;
         }
 
         @media (min-width: 601px) {
@@ -80,6 +80,7 @@
             }
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
     <div class="view-counter" id="viewCounter">&#128065; Views: 0</div>
@@ -90,6 +91,17 @@
 
     <script>
         let viewCount = localStorage.getItem('viewCount') || 0;
+        let firstVisit = !localStorage.getItem('visited');
+
+        if (firstVisit) {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+            localStorage.setItem('visited', 'true');
+        }
+
         viewCount++;
         localStorage.setItem('viewCount', viewCount);
         document.getElementById('viewCounter').innerHTML = '&#128065; Views: ' + viewCount;
