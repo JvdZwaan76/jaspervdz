@@ -42,7 +42,7 @@
             padding: 10px 0;
             text-align: center;
             width: 100%;
-            background-color: #ff9933; /* More intense orange */
+            background-color: #ff9933;
             font-size: 14px;
             color: #555;
             margin-bottom: 15px;
@@ -62,16 +62,21 @@
             height: auto;
         }
 
-        .download-button {
-            display: inline-block;
+        .button-container {
+            display: flex;
+            justify-content: center;
             margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .download-button, .rsvp-button {
             padding: 10px 20px;
             background-color: #007bff;
             color: white;
             text-decoration: none;
             border-radius: 5px;
             font-family: sans-serif;
-            margin-bottom: 20px;
+            margin: 0 5px; /* Add spacing between buttons */
         }
 
         @media (min-width: 601px) {
@@ -86,7 +91,10 @@
     <div class="view-counter" id="viewCounter">&#128065; Unique Views: 0</div>
     <div class="invite-container">
         <img src="/images/jj-farewell-invite.jpg" alt="JJ Farewell Invitation" class="invite-image">
-        <a href="/images/jj-farewell-invite.jpg" class="download-button" download="jj-farewell-invite.jpg">Download this Invitation</a>
+        <div class="button-container">
+            <a href="/images/jj-farewell-invite.jpg" class="download-button" download="jj-farewell-invite.jpg">Download this Invitation</a>
+            <a href="sms:+18053387681?body=I%20will%20attend:%20" class="rsvp-button">RSVP</a>
+        </div>
     </div>
 
     <script>
