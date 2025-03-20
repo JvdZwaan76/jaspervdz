@@ -115,7 +115,7 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
-    <div class="view-counter" id="viewCounter">&#128065; Unique Views: 0 | <i style="color: darkblue;">Private Event for Invites Only!</i></div>
+    <div class="view-counter" id="viewCounter">&#128065; Unique Views: 0 | <i style="color: darkgrey;">Attendance is by invitation only.</i></div>
     <div class="invite-container">
         <img src="/images/jj-farewell-invite.jpg" alt="JJ Farewell Invitation" class="invite-image">
         <div class="button-container">
@@ -143,7 +143,7 @@
             localStorage.setItem('uniqueView', 'false');
         }
 
-        document.getElementById('viewCounter').innerHTML = '&#128065; Unique Views: ' + uniqueViewCount + ' | <i style="color: darkblue;">Private Event for Invites Only!</i>';
+        document.getElementById('viewCounter').innerHTML = '&#128065; Unique Views: ' + uniqueViewCount + ' | <i style="color: darkgrey;">Attendance is by invitation only.</i>';
     </script>
 </body>
 </html>
