@@ -44,31 +44,18 @@
             flex-wrap: wrap;
         }
 
-        .view-counter > * {
-            /* Targets direct children of .view-counter */
-            /* width: 100%; */
-            /* Removed width restriction */
+        .view-counter>* {
             margin: 5px;
-            /* Added margin for spacing */
         }
 
-        .view-counter > :first-child {
-            /* Targets the first child */
+        .view-counter>:first-child {
             order: 1;
-            /* Ensures it comes first */
         }
 
-        .view-counter > strong {
+        .view-counter>strong {
             order: 2;
-            /* Ensures it comes second */
             border-left: 1px solid rgba(0, 0, 0, 0.2);
             padding-left: 10px;
-            /* margin-top: 5px; */
-            /* Removed margin-top */
-            /* width: 100%; */
-            /* Removed width restriction */
-            /* text-align: center; */
-            /* Removed text-align */
         }
 
         .invite-container {
@@ -127,13 +114,6 @@
             .invite-container {
                 width: 90%;
             }
-
-            /* .view-counter > * { */
-            /* width: auto; */
-            /* } */
-            /* .view-counter > strong { */
-            /* margin-top: 0; */
-            /* } */
         }
 
         @media (min-width: 768px) {
@@ -149,10 +129,21 @@
                 max-width: 800px;
             }
         }
+
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
     </style>
 </head>
 
 <body>
+    <canvas id="confetti-canvas"></canvas>
     <div class="view-counter" id="viewCounter">&#128065; Unique Views: 0 <strong
             style="text-decoration: underline;">Invited Guests Only!</strong></div>
     <div class="invite-container">
@@ -174,6 +165,51 @@
         }
 
         document.getElementById('viewCounter').innerHTML = '&#128065; Unique Views: ' + uniqueViewCount + ' <strong style="text-decoration: underline;">Invited Guests Only!</strong>';
+
+        // Confetti Effect
+        const canvas = document.getElementById('confetti-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const confetti = [];
+        const confettiCount = 100;
+
+        for (let i = 0; i < confettiCount; i++) {
+            confetti.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: Math.random() * 4 + 1,
+                color: `hsl(${Math.random() * 360}, 100%, 50%)`,
+                velocity: {
+                    x: Math.random() * 4 - 2,
+                    y: Math.random() * 5 + 2,
+                },
+            });
+        }
+
+        function drawConfetti() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            confetti.forEach(c => {
+                ctx.beginPath();
+                ctx.arc(c.x, c.y, c.radius, 0, Math.PI * 2);
+                ctx.fillStyle = c.color;
+                ctx.fill();
+                c.x += c.velocity.x;
+                c.y += c.velocity.y;
+                if (c.y > canvas.height + 10 || c.x > canvas.width + 10 || c.x < -10) {
+                    c.x = Math.random() * canvas.width;
+                    c.y = -10;
+                }
+            });
+        }
+
+        function animate() {
+            drawConfetti();
+            requestAnimationFrame(animate);
+        }
+
+        animate();
     </script>
 </body>
 
