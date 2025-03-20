@@ -39,10 +39,11 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
             margin-bottom: 20px;
             font-weight: 500;
+            font-size: 1rem; /* Use rem for scalable font sizes */
         }
 
         .invite-container {
-            width: 90%;
+            width: 95%; /* Increased width for mobile */
             max-width: 600px;
             border-radius: 8px;
             overflow: hidden;
@@ -76,6 +77,7 @@
             font-weight: 600;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            font-size: 1rem; /* Use rem for scalable font sizes */
         }
 
         .download-button:hover, .rsvp-button:hover {
@@ -83,11 +85,17 @@
         }
 
         .rsvp-button {
-            background-color: #4CAF50; /* Green for RSVP */
+            background-color: #4CAF50;
         }
 
         .rsvp-button:hover {
             background-color: #45a049;
+        }
+
+        @media (min-width: 600px) { /* Changed to 600px for more specific mobile/tablet breakpoint */
+            .invite-container {
+                width: 90%; /* Slightly less width on larger mobile */
+            }
         }
 
         @media (min-width: 768px) {
