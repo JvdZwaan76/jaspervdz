@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JJ Farewell BBQ | You're Invited!</title>
-    <meta name="description" content="You're invited to JJ's farewell BBQ! Join us for a special event. RSVP and download the invitation.">
+    <meta name="description"
+        content="You're invited to JJ's farewell BBQ! Join us for a special event. RSVP and download the invitation.">
     <meta name="keywords" content="JJ, farewell, BBQ, invitation, event, party, RSVP, download">
     <meta property="og:title" content="JJ Farewell BBQ | You're Invited!">
-    <meta property="og:description" content="You're invited to JJ's farewell BBQ! Join us for a special event. RSVP and download the invitation.">
+    <meta property="og:description"
+        content="You're invited to JJ's farewell BBQ! Join us for a special event. RSVP and download the invitation.">
     <meta property="og:image" content="https://www.jaspervanderzwaan.com/images/jj-farewell-invite.jpg">
     <meta property="og:url" content="https://www.jaspervanderzwaan.com/invitation">
     <meta property="og:type" content="website">
@@ -41,19 +44,31 @@
             flex-wrap: wrap;
         }
 
-        .view-counter > * { /* Targets direct children of .view-counter */
-            width: 100%;
+        .view-counter > * {
+            /* Targets direct children of .view-counter */
+            /* width: 100%; */
+            /* Removed width restriction */
+            margin: 5px;
+            /* Added margin for spacing */
         }
 
-        .view-counter > :first-child { /* Targets the first child */
-            order: 1; /* Ensures it comes first */
+        .view-counter > :first-child {
+            /* Targets the first child */
+            order: 1;
+            /* Ensures it comes first */
         }
 
         .view-counter > strong {
-            order: 2; /* Ensures it comes second */
+            order: 2;
+            /* Ensures it comes second */
             border-left: 1px solid rgba(0, 0, 0, 0.2);
             padding-left: 10px;
-            margin-top: 5px;
+            /* margin-top: 5px; */
+            /* Removed margin-top */
+            /* width: 100%; */
+            /* Removed width restriction */
+            /* text-align: center; */
+            /* Removed text-align */
         }
 
         .invite-container {
@@ -81,7 +96,8 @@
             gap: 10px;
         }
 
-        .download-button, .rsvp-button {
+        .download-button,
+        .rsvp-button {
             padding: 12px 24px;
             background-color: #ff9933;
             color: #fff;
@@ -94,7 +110,8 @@
             font-size: 1rem;
         }
 
-        .download-button:hover, .rsvp-button:hover {
+        .download-button:hover,
+        .rsvp-button:hover {
             background-color: #e68a2e;
         }
 
@@ -111,13 +128,12 @@
                 width: 90%;
             }
 
-            .view-counter > * {
-                width: auto;
-            }
-
-            .view-counter > strong {
-                margin-top: 0;
-            }
+            /* .view-counter > * { */
+            /* width: auto; */
+            /* } */
+            /* .view-counter > strong { */
+            /* margin-top: 0; */
+            /* } */
         }
 
         @media (min-width: 768px) {
@@ -135,8 +151,10 @@
         }
     </style>
 </head>
+
 <body>
-    <div class="view-counter" id="viewCounter">&#128065; Unique Views: 0 <strong style="text-decoration: underline;">Invited Guests Only!</strong></div>
+    <div class="view-counter" id="viewCounter">&#128065; Unique Views: 0 <strong
+            style="text-decoration: underline;">Invited Guests Only!</strong></div>
     <div class="invite-container">
         <img src="/images/jj-farewell-invite.jpg" alt="JJ Farewell Invitation" class="invite-image">
         <div class="button-container">
@@ -158,4 +176,5 @@
         document.getElementById('viewCounter').innerHTML = '&#128065; Unique Views: ' + uniqueViewCount + ' <strong style="text-decoration: underline;">Invited Guests Only!</strong>';
     </script>
 </body>
+
 </html>
