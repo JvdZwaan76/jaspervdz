@@ -23,22 +23,30 @@
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: flex-start;
             align-items: center;
             min-height: 100vh;
-            background-color: #f0f0f0; /* Optional: background color */
+            background-color: #f0f0f0;
+        }
+
+        .view-counter {
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+            background-color: #e0e0e0;
         }
 
         .invite-container {
-            width: 90%; /* Adjust as needed for padding on mobile */
-            max-width: 600px; /* Maximum width on larger screens */
-            box-sizing: border-box; /* Include padding and border in the element's total width and height */
-            text-align: center; /* Center the button */
+            width: 90%;
+            max-width: 600px;
+            box-sizing: border-box;
+            text-align: center;
         }
 
         .invite-image {
             width: 100%;
-            display: block; /* Remove extra space below image */
+            display: block;
             height: auto;
         }
 
@@ -53,18 +61,25 @@
             font-family: sans-serif;
         }
 
-        /* Optional: Add some padding or margin for better spacing */
-        @media (min-width: 601px) { /* Adjust for larger screens */
+        @media (min-width: 601px) {
             .invite-container {
-                width: auto; /* Allow image to be its natural size on larger screens */
+                width: auto;
             }
         }
     </style>
 </head>
 <body>
+    <div class="view-counter" id="viewCounter">Views: 0</div>
     <div class="invite-container">
         <img src="/images/jj-farewell-invite.jpg" alt="JJ Farewell Invitation" class="invite-image">
         <a href="/images/jj-farewell-invite.jpg" class="download-button" download="jj-farewell-invite.jpg">Download this Invitation</a>
     </div>
+
+    <script>
+        let viewCount = localStorage.getItem('viewCount') || 0;
+        viewCount++;
+        localStorage.setItem('viewCount', viewCount);
+        document.getElementById('viewCounter').textContent = 'Views: ' + viewCount;
+    </script>
 </body>
 </html>
