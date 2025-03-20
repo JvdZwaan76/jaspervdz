@@ -38,16 +38,22 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-wrap: wrap; /* Added for mobile */
+            flex-wrap: wrap;
         }
 
-        .view-counter strong {
-            margin-left: 10px;
+        .view-counter > * { /* Targets direct children of .view-counter */
+            width: 100%;
+        }
+
+        .view-counter > :first-child { /* Targets the first child */
+            order: 1; /* Ensures it comes first */
+        }
+
+        .view-counter > strong {
+            order: 2; /* Ensures it comes second */
             border-left: 1px solid rgba(0, 0, 0, 0.2);
             padding-left: 10px;
-            margin-top: 5px; /* Added for mobile */
-            width: 100%; /* Added for mobile */
-            text-align: center; /* Added for mobile */
+            margin-top: 5px;
         }
 
         .invite-container {
@@ -105,9 +111,11 @@
                 width: 90%;
             }
 
-            .view-counter strong{
+            .view-counter > * {
                 width: auto;
-                text-align: left;
+            }
+
+            .view-counter > strong {
                 margin-top: 0;
             }
         }
